@@ -13,6 +13,6 @@
       }
     },
     "require": {
-      "spatie/array-to-xml": "~2.8.0"
+      "spatie/array-to-xml": "^2.8.0"
     }
 }
