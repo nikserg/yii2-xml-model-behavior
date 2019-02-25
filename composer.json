@@ -14,5 +14,5 @@
     },
     "require": {
       "spatie/array-to-xml": "~2.8.0"
-    },
+    }
 }
