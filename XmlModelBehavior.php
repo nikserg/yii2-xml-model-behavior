@@ -15,7 +15,7 @@ use yii\base\Model;
 class XmlModelBehavior extends Behavior
 {
     /**
-     * Название корневого элемента
+     * Root element name
      *
      *
      * @var string
@@ -24,16 +24,6 @@ class XmlModelBehavior extends Behavior
     public function asXml()
     {
         $fields = $this->owner->toArray();
-        $attributes = [];
-        foreach ($fields as $fieldName => $fieldValue) {
-            if (strpos($fieldName, '_') === 0) {
-                $attributes[ substr($fieldName, 1) ] = $fieldValue;
-                unset($fields[$fieldName]);
-            }
-        }
-        if (!empty($attributes)) {
-            $fields['_attributes'] = $attributes;
-        }
         return ArrayToXml::convert($fields, $this->rootElement);
     }
 }
